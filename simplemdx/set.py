@@ -1,5 +1,5 @@
 from simplemdx.member import member
-from typing import List
+from typing import List, Union
 
 class set:
 
@@ -29,7 +29,7 @@ class set:
                     for el in elements
                 ]
             
-            def to_mdx(self):
+            def to_mdx(self, indent: ):
                 return "{" + ''.join(self.mems) + "}"
 
         return MembersClass(self.dimension, elements, self.hierarchy)
