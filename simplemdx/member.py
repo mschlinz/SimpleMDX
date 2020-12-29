@@ -5,10 +5,9 @@ class member:
 
     def __init__(self, dimension: str, element: str, hierarchy: str = '') -> None:
 
-        self.dimension = dimension
-        self.element = element
-        self.hierarchy = hierarchy if hierarchy else dimension
-        self.mdx_format()
+        self.dimension = mdx_format(dimension)
+        self.element = mdx_format(element)
+        self.hierarchy = mdx_format(hierarchy) if hierarchy else self.dimension
 
     def to_mdx(self) -> str:
         return "[" + self.dimension + "].[" + self.hierarchy + "].[" + self.element + "]"
